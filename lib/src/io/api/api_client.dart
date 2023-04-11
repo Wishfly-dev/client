@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:client/src/io/api/failures.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared/shared.dart';
+import 'package:wishfly_client/src/io/api/failures.dart';
 
 class WishflyApiClient {
   /// Create an instance of [WishflyApiClient] that integrates

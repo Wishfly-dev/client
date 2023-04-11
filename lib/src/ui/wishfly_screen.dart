@@ -1,9 +1,9 @@
-import 'package:client/src/ui/components/wishfly_view.dart';
-import 'package:client/src/ui/theme/wishfly_theme.dart';
-import 'package:client/src/ui/theme/wishfly_theme_data.dart';
-import 'package:client/src/ui/wishfly_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wishfly_client/src/ui/components/wishfly_view.dart';
+import 'package:wishfly_client/src/ui/theme/wishfly_theme.dart';
+import 'package:wishfly_client/src/ui/theme/wishfly_theme_data.dart';
+import 'package:wishfly_client/src/ui/wishfly_controller.dart';
 
 class Wishfly extends StatelessWidget {
   const Wishfly({

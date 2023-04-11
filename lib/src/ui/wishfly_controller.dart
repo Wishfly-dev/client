@@ -1,11 +1,11 @@
 import 'dart:core';
 
-import 'package:client/src/core/ext/list_wish_response.dart';
-import 'package:client/src/core/result.dart';
-import 'package:client/src/io/api/api.dart';
-import 'package:client/src/io/managers/voted_wish_manager.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared/shared.dart' hide Result;
+import 'package:wishfly_client/src/core/ext/list_wish_response.dart';
+import 'package:wishfly_client/src/core/result.dart';
+import 'package:wishfly_client/src/io/api/api.dart';
+import 'package:wishfly_client/src/io/managers/voted_wish_manager.dart';
 
 class WishflyController extends ChangeNotifier {
   final WishflyApiClient _apiClient;

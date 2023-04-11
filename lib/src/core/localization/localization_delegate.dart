@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:client/wishfly_client.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wishfly_client/wishfly_client.dart';
 
 final _supportedLanguages = ['en', 'cs'];
 

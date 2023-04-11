@@ -1,12 +1,12 @@
-import 'package:client/src/core/ext/context_ext.dart';
-import 'package:client/src/ui/components/wishfly_adaptive_progress_bar.dart';
-import 'package:client/src/ui/components/wishfly_list_tile.dart';
-import 'package:client/src/ui/components/wishfly_new_wish_modal.dart';
-import 'package:client/src/ui/theme/spacing.dart';
-import 'package:client/src/ui/theme/wishfly_theme.dart';
-import 'package:client/src/ui/wishfly_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wishfly_client/src/core/ext/context_ext.dart';
+import 'package:wishfly_client/src/ui/components/wishfly_adaptive_progress_bar.dart';
+import 'package:wishfly_client/src/ui/components/wishfly_list_tile.dart';
+import 'package:wishfly_client/src/ui/components/wishfly_new_wish_modal.dart';
+import 'package:wishfly_client/src/ui/theme/spacing.dart';
+import 'package:wishfly_client/src/ui/theme/wishfly_theme.dart';
+import 'package:wishfly_client/src/ui/wishfly_controller.dart';
 
 class WishflyView extends StatelessWidget {
   const WishflyView({super.key});

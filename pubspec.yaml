@@ -1,4 +1,4 @@
-name: client
+name: wishfly_client
 description: Wishfly client.
 version: 1.0.0
 publish_to: none

@@ -1,4 +1,4 @@
-library client;
+library wishfly_client;
 
 export 'src/core/localization/localization_delegate.dart';
 export 'src/core/localization/localizations.dart';

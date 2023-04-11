@@ -1,6 +1,6 @@
-import 'package:client/wishfly_client.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:wishfly_client/wishfly_client.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

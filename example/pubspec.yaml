@@ -12,8 +12,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  client:
+  wishfly_client:
     path: ../../client
+
   flutter_localizations:
     sdk: flutter
 
