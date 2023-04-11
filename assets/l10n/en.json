@@ -1,0 +1,9 @@
+{
+    "noWishes": "No wishes yet.",
+    "newWishTitle": "Add new wish",
+    "newWishText": "Title",
+    "newWishDescription": "Description",
+    "emptyTitleValidationErrorMessage": "Wish title cannot be empty.",
+    "errorLoadingWishes": "Error loading wishes.",
+    "saveNewWish": "Save"
+}
