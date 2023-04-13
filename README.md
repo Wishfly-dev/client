@@ -1,4 +1,5 @@
-Put your users to driver's seat. Wishfly allows you to know what functions should your app have. 
+# Wishfly
+## Put your users to driver's seat. Wishfly allows you to know what functions should your app have. 
 
 ![](./images/hero.png)
 
@@ -7,10 +8,11 @@ Put your users to driver's seat. Wishfly allows you to know what functions shoul
 - In [Admin](https://admin.wishfly.dev) you can change status of each wish (all new wishes must be approved before showing in list for users).
 
 ## Getting started
-1. Add dependency to your pubspec file
+1. Add dependency to your `pubspec.yaml` file
 ```yaml
 wishfly_client:
     https://github.com/Wishfly-dev/client.git
+    ref: main
 ```
 
 2. Import and configure it with your API key and project. You can find your API key in your admin dashboard on <a href="https://admin.wishfly.dev" target="_blank">wishfly.dev</a>
@@ -27,6 +29,7 @@ child: Wishfly(
     projectId: 0, // Paste your project ID here        
 ),
 ```
+---
 
 ## Additional information
 
@@ -69,3 +72,6 @@ child: Wishfly(
     ),      
 ),
 ``` 
+
+--- 
+### Note: ⚠️ Wishfly is currently in beta and under development. The SDK API might change in future.

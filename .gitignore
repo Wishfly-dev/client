@@ -10,6 +10,9 @@
 .svn/
 migrate_working_dir/
 
+.flutter-plugins-dependencies
+.flutter-plugins
+
 # IntelliJ related
 *.iml
 *.ipr
