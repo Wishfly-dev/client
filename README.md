@@ -34,7 +34,24 @@ child: Wishfly(
 ## Additional information
 
 ### Localization
-Wishfly currently support two locales: English and Czech. You can see string [here](https://github.com/Wishfly-dev/client/tree/dev/assets/l10n). If you want to add a locale, don't hesitate to create a pull request. 
+Default language is English.
+
+Wishfly currently support two locales: English and Czech. You can see string [here](https://github.com/Wishfly-dev/client/tree/dev/assets/l10n).
+
+For supporting other languages, you can add corresponding keys to your own localization file and pass it to Wishfly widget. You can see localization keys [here](https://github.com/Wishfly-dev/client/blob/dev/assets/l10n/en.json).
+
+If you do not add keys to your localization file, you can pass string with keys to Wishfly widget. 
+
+```dart
+child: Wishfly(
+    apiKey: ...
+    projectId: ...,
+    localizationOverrides: const {
+        "noWishes": "No wishes here, but you can be the first one!",
+        //... and more
+    },
+),
+```
 
 ### Theme 
 You can customize colors in UI. Here you can see what you can customize:

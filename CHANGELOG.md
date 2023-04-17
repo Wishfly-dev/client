@@ -1,3 +1,5 @@
-## 0.0.1
+## 0.0.2
+* Feat: Added localization support
 
-* TODO: Describe initial release.
+## 0.0.1
+* Initial release 
