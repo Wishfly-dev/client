@@ -1,0 +1,24 @@
+name: Analyzing project
+
+run-name: Analyzing Flutter container image
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.7.x
+
+      - name: Check flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze project source
+        run: flutter analyze lib --fatal-infos
