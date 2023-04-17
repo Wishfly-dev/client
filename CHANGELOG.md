@@ -1,3 +1,6 @@
+## 0.0.3
+* Fix: Lint issues
+
 ## 0.0.2
 * Feat: Added localization support
 
