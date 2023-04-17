@@ -28,7 +28,7 @@ class WishflyController extends ChangeNotifier {
     VotedWishManager? votedWishManager,
     required String apiKey,
     required int projectId,
-  })  : _apiClient = apiClient ?? WishflyApiClient.localhost(apiKey: apiKey),
+  })  : _apiClient = apiClient ?? WishflyApiClient(apiKey: apiKey),
         _votedWishManager = votedWishManager ?? PrefVotedWishManager(),
         _apiKey = apiKey,
         _projectId = projectId;

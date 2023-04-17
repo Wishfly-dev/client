@@ -12,4 +12,8 @@ class WishflyLocalizations {
   String translate(String key) {
     return _localizedStrings[key] ?? '';
   }
+
+  void overrideKey(String key, String value) {
+    _localizedStrings[key] = value;
+  }
 }

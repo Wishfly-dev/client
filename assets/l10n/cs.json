@@ -1,9 +1,0 @@
-{
-    "noWishes": "Zatím žádná přání.",
-    "newWishTitle": "Přidat nové přání",
-    "newWishText": "Název",
-    "newWishDescription": "Popis",
-    "emptyTitleValidationErrorMessage": "Přání musí mít název.",
-    "errorLoadingWishes": "Chyba při načítání.",
-    "saveNewWish": "Uložit"
-}

@@ -3,7 +3,7 @@
     "newWishTitle": "Add new wish",
     "newWishText": "Title",
     "newWishDescription": "Description",
-    "emptyTitleValidationErrorMessage": "Wish title cannot be empty.",
+    "emptyTitleValidationErrorMessage": "Wish title can not be empty.",
     "errorLoadingWishes": "Error loading wishes.",
     "saveNewWish": "Save"
 }
