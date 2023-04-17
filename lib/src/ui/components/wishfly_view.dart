@@ -59,7 +59,7 @@ class WishflyView extends StatelessWidget {
 
 /// Displays an error message when the initial fetch fails
 class _InitialFetchError extends StatelessWidget {
-  const _InitialFetchError({super.key});
+  const _InitialFetchError();
 
   @override
   Widget build(BuildContext context) {
