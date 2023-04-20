@@ -11,9 +11,6 @@ class WishflyController extends ChangeNotifier {
   final WishflyApiClient _apiClient;
   final VotedWishManager _votedWishManager;
 
-  /// API key to communicate with backend
-  final String _apiKey;
-
   /// Project ID to identify key with project
   final int _projectId;
 
@@ -28,9 +25,8 @@ class WishflyController extends ChangeNotifier {
     VotedWishManager? votedWishManager,
     required String apiKey,
     required int projectId,
-  })  : _apiClient = apiClient ?? WishflyApiClient.localhost(apiKey: apiKey),
+  })  : _apiClient = apiClient ?? WishflyApiClient(apiKey: apiKey),
         _votedWishManager = votedWishManager ?? PrefVotedWishManager(),
-        _apiKey = apiKey,
         _projectId = projectId;
 
   Future<void> refresh() async => fetchProject();

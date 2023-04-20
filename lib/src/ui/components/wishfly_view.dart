@@ -21,11 +21,15 @@ class WishflyView extends StatelessWidget {
         child: context.watch<WishflyController>().fetchWishResult.when(
               (wishes) => wishes.isEmpty
                   ? Center(
-                      child: Text(
-                        context.translate('noWishes'),
-                        style: TextStyle(
-                          color: WishflyTheme.of(context)?.titleTextColor,
-                          fontSize: 18,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: spacingL),
+                        child: Text(
+                          context.translate('noWishes'),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: WishflyTheme.of(context)?.titleTextColor,
+                            fontSize: 18,
+                          ),
                         ),
                       ),
                     )
@@ -55,7 +59,7 @@ class WishflyView extends StatelessWidget {
 
 /// Displays an error message when the initial fetch fails
 class _InitialFetchError extends StatelessWidget {
-  const _InitialFetchError({super.key});
+  const _InitialFetchError();
 
   @override
   Widget build(BuildContext context) {

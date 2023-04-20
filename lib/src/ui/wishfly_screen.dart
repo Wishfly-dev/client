@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wishfly_client/src/core/ext/context_ext.dart';
 import 'package:wishfly_client/src/ui/components/wishfly_view.dart';
 import 'package:wishfly_client/src/ui/theme/wishfly_theme.dart';
 import 'package:wishfly_client/src/ui/theme/wishfly_theme_data.dart';
 import 'package:wishfly_client/src/ui/wishfly_controller.dart';
 
-class Wishfly extends StatelessWidget {
+class Wishfly extends StatefulWidget {
   const Wishfly({
     required this.apiKey,
     required this.projectId,
     this.theme,
+    this.localizationOverrides,
     super.key,
   });
 
@@ -22,17 +24,37 @@ class Wishfly extends StatelessWidget {
   /// Custom theme data
   final WishflyThemeData? theme;
 
+  /// Override localization strings
+  final Map<String, String>? localizationOverrides;
+
+  @override
+  State<Wishfly> createState() => _WishflyState();
+}
+
+class _WishflyState extends State<Wishfly> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => WishflyController(
-        apiKey: apiKey,
-        projectId: projectId,
+        apiKey: widget.apiKey,
+        projectId: widget.projectId,
       )..fetchProject(),
       child: WishflyTheme(
-        data: theme ?? WishflyThemeData.light(),
+        data: widget.theme ?? WishflyThemeData.light(),
         child: const WishflyView(),
       ),
     );
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    /// Override localization strings
+    if (widget.localizationOverrides != null) {
+      widget.localizationOverrides!.forEach(
+        (key, value) => context.overrideKey(key, value),
+      );
+    }
   }
 }

@@ -40,6 +40,7 @@ class WishflyApiClient {
   final http.Client _httpClient;
   static const unknownErrorMessage = 'An unknown error occurred.';
 
+  /// API key used for authentication with the API.
   String _apiKey;
 
   /// POST /api/v1/auth/register
@@ -118,7 +119,6 @@ class WishflyApiClient {
       uri,
       headers: await _getRequestHeaders(),
     );
-    final body = response.json();
 
     if (response.statusCode != HttpStatus.created) {
       throw _parseErrorResponse(response.body, response.statusCode);
@@ -152,7 +152,7 @@ extension on http.Response {
   Map<String, dynamic> json() {
     try {
       return jsonDecode(body) as Map<String, dynamic>;
-    } catch (error, stackTrace) {
+    } catch (_, stackTrace) {
       throw Exception(stackTrace);
     }
   }
@@ -160,7 +160,7 @@ extension on http.Response {
   List jsonList() {
     try {
       return jsonDecode(body) as List;
-    } catch (error, stackTrace) {
+    } catch (_, stackTrace) {
       throw Exception(stackTrace);
     }
   }

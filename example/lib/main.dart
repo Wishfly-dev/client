@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Wishfly Demo',
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      supportedLocales: const [Locale('en'), Locale('cs')],
+      supportedLocales: const [Locale('en')],
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -39,8 +39,11 @@ class WishflyScreen extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Wishfly(
-        apiKey: "your-api-key-here", // Paste your API key here
-        projectId: 0, // Paste your project ID here
+        apiKey: "lXUd5IaeienlRIv2hWk0j7E7u9oMdnzckTHSKkWx0AM=", // Paste your API key here
+        projectId: 1, // Paste your project ID here
+        localizationOverrides: const {
+          "noWishes": "No wishes here, but you can be the first one!", // override specific key in localization
+        },
         theme: WishflyThemeData.light(
           voteIconColor: Colors.black,
           addWishButtonColor: Colors.black,

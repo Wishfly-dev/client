@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wishfly_client/wishfly_client.dart';
 
-final _supportedLanguages = ['en', 'cs'];
+final _supportedLanguages = ['en'];
 
 class WishflyLocalizationsDelegate extends LocalizationsDelegate<WishflyLocalizations> {
   const WishflyLocalizationsDelegate();
@@ -16,7 +16,14 @@ class WishflyLocalizationsDelegate extends LocalizationsDelegate<WishflyLocaliza
 
   @override
   Future<WishflyLocalizations> load(Locale locale) async {
-    String jsonString = await rootBundle.loadString('packages/client/assets/l10n/${locale.languageCode}.json');
+    late String jsonString;
+
+    try {
+      jsonString = await rootBundle.loadString('assets/l10n/${locale.languageCode}.json');
+    } catch (e) {
+      jsonString = await rootBundle.loadString('packages/wishfly_client/assets/l10n/${locale.languageCode}.json');
+    }
+
     Map<String, dynamic> jsonMap = json.decode(jsonString);
 
     return SynchronousFuture<WishflyLocalizations>(
