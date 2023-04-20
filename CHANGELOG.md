@@ -1,3 +1,5 @@
+## 0.0.4
+* Doc: Updated README with localization instructions
 ## 0.0.3
 * Fix: Lint issues
 
