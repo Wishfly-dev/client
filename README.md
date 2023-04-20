@@ -36,11 +36,32 @@ child: Wishfly(
 ### Localization
 Default language is English.
 
-Wishfly currently support two locales: English and Czech. You can see string [here](https://github.com/Wishfly-dev/client/tree/dev/assets/l10n).
-
 For supporting other languages, you can add corresponding keys to your own localization file and pass it to Wishfly widget. You can see localization keys [here](https://github.com/Wishfly-dev/client/blob/dev/assets/l10n/en.json).
 
-If you do not add keys to your localization file, you can pass string with keys to Wishfly widget. 
+To get localization, add ```WishflyLocalizationDelegate``` to your MaterialApp widget. 
+
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Wishfly Demo',
+      supportedLocales: const [Locale('en')],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        WishflyLocalizationsDelegate(), // Add this line
+      ],
+      home: ...,
+    );
+  }
+}
+```
+
+If you do not add keys to your localization file, you can pass a map with keys to Wishfly widget in order to override default values.
 
 ```dart
 child: Wishfly(

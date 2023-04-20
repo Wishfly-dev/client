@@ -1,6 +1,6 @@
 name: Analyzing project
 
-run-name: Analyzing Flutter container image
+run-name: Analyzing Flutter
 on:
   push:
     branches: [dev]
