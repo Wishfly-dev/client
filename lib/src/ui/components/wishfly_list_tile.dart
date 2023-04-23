@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shared/shared.dart';
 import 'package:wishfly_client/src/ui/theme/spacing.dart';
 import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly_shared/wishfly_shared.dart';
 
 class WishflyListTile extends StatelessWidget {
   final WishResponseDto wish;
