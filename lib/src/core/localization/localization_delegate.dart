@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/src/core/localization/localizations.dart';
 
 final _supportedLanguages = ['en'];
 

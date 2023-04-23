@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wishfly_client/src/core/ext/context_ext.dart';
-import 'package:wishfly_client/src/ui/theme/spacing.dart';
-import 'package:wishfly_client/src/ui/wishfly_controller.dart';
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/src/core/ext/context_ext.dart';
+import 'package:wishfly/src/ui/theme/spacing.dart';
+import 'package:wishfly/src/ui/theme/theme.dart';
+import 'package:wishfly/src/ui/wishfly_controller.dart';
 
 class NewWishModalController {
   static Future<void> showNewWishModal(BuildContext context) async {

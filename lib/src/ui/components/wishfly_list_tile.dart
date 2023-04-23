@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wishfly_client/src/ui/theme/spacing.dart';
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/src/ui/theme/spacing.dart';
+import 'package:wishfly/src/ui/theme/theme.dart';
 import 'package:wishfly_shared/wishfly_shared.dart';
 
 class WishflyListTile extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wishfly_client/src/ui/theme/wishfly_theme_data.dart';
+import 'package:wishfly/src/ui/theme/wishfly_theme_data.dart';
 
 class WishflyTheme extends StatelessWidget {
   const WishflyTheme({

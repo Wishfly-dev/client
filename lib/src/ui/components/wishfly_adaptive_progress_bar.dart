@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/src/ui/theme/theme.dart';
 
 class WishflyAdaptiveProgressBar extends StatelessWidget {
   const WishflyAdaptiveProgressBar({super.key});

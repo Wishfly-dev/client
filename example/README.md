@@ -1,3 +1,5 @@
 # Wishfly client example app
 
-Test environment for Wishfly client
+Test environment for Wishfly client. 
+
+

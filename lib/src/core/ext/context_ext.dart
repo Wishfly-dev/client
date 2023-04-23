@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/src/core/localization/localizations.dart';
 
 extension BuildContextExt on BuildContext {
   /// Returns the translated text for the given [key].

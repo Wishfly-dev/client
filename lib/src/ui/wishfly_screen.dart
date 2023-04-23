@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wishfly_client/src/core/ext/context_ext.dart';
-import 'package:wishfly_client/src/ui/components/wishfly_view.dart';
-import 'package:wishfly_client/src/ui/theme/wishfly_theme.dart';
-import 'package:wishfly_client/src/ui/theme/wishfly_theme_data.dart';
-import 'package:wishfly_client/src/ui/wishfly_controller.dart';
+import 'package:wishfly/src/core/ext/context_ext.dart';
+import 'package:wishfly/src/ui/components/wishfly_view.dart';
+import 'package:wishfly/src/ui/theme/wishfly_theme.dart';
+import 'package:wishfly/src/ui/theme/wishfly_theme_data.dart';
+import 'package:wishfly/src/ui/wishfly_controller.dart';
 
 class Wishfly extends StatefulWidget {
   const Wishfly({

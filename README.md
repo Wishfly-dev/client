@@ -37,7 +37,7 @@ Don't forget to `flutter pub get`.
 3. Import package in your dart file
 
 ```dart
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/wishfly.dart';
 ```
 
 4. You can place Widget in you widget tree. It could be a screen, modal or whatever you want. You can see example below.
