@@ -49,5 +49,6 @@ class ErrorResponse {
 
   String toJson() => json.encode(toMap());
 
-  factory ErrorResponse.fromJson(String source) => ErrorResponse.fromMap(json.decode(source));
+  factory ErrorResponse.fromJson(String source) =>
+      ErrorResponse.fromMap(json.decode(source));
 }

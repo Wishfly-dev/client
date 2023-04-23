@@ -112,9 +112,11 @@ class WishflyThemeData {
       tileBackgroundColor: tileBackgroundColor ?? this.tileBackgroundColor,
       voteCountTextColor: voteCountTextColor ?? this.voteCountTextColor,
       descriptionTextColor: descriptionTextColor ?? this.descriptionTextColor,
-      primaryBackgroundColor: primaryBackgroundColor ?? this.primaryBackgroundColor,
+      primaryBackgroundColor:
+          primaryBackgroundColor ?? this.primaryBackgroundColor,
       itemTileColor: itemTileColor ?? this.itemTileColor,
-      progressBarBackgroundColor: progressBarBackgroundColor ?? this.progressBarBackgroundColor,
+      progressBarBackgroundColor:
+          progressBarBackgroundColor ?? this.progressBarBackgroundColor,
     );
   }
 }

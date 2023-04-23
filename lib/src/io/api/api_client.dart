@@ -45,7 +45,8 @@ class WishflyApiClient {
 
   /// POST /api/v1/auth/register
   /// Creates a new user
-  Future<LoginResponseDto> register({required RegisterRequestDto request}) async {
+  Future<LoginResponseDto> register(
+      {required RegisterRequestDto request}) async {
     final uri = Uri.parse('$_baseUrl/api/v1/auth/register');
     final response = await _httpClient.post(
       uri,

@@ -17,12 +17,14 @@ class WishflyView extends StatelessWidget {
       backgroundColor: WishflyTheme.of(context)?.primaryBackgroundColor,
       body: RefreshIndicator(
         color: WishflyTheme.of(context)?.addWishButtonColor,
-        onRefresh: () async => await context.read<WishflyController>().refresh(),
+        onRefresh: () async =>
+            await context.read<WishflyController>().refresh(),
         child: context.watch<WishflyController>().fetchWishResult.when(
               (wishes) => wishes.isEmpty
                   ? Center(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: spacingL),
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: spacingL),
                         child: Text(
                           context.translate('noWishes'),
                           textAlign: TextAlign.center,
@@ -40,7 +42,8 @@ class WishflyView extends StatelessWidget {
                         final wish = wishes[index];
                         return WishflyListTile(
                           wish: wish,
-                          onVoteTap: () => context.read<WishflyController>().vote(wish),
+                          onVoteTap: () =>
+                              context.read<WishflyController>().vote(wish),
                         );
                       },
                     ),
