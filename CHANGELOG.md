@@ -1,3 +1,5 @@
+## 0.0.6
+* Fix: Formatting issues
 ## 0.0.5
 * Doc: Updated README
 ## 0.0.4
