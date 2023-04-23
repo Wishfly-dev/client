@@ -1,5 +1,10 @@
 # Wishfly
+
+[![pub package](https://img.shields.io/pub/v/wishfly.svg)](https://pub.dev/packages/wishfly)
+[![Website](https://img.shields.io/badge/website-wishfly.dev-blue.svg)](https://wishfly.dev/)
+
 ## Put your users to driver's seat. Wishfly allows you to know what functions should your app have. 
+
 
 ![](./images/hero.png)
 
@@ -8,26 +13,48 @@
 - In [Admin](https://admin.wishfly.dev) you can change status of each wish (all new wishes must be approved before showing in list for users).
 
 ## Getting started
-1. Add dependency to your `pubspec.yaml` file
+> 🤘 It takes less than 180 seconds to integrate Wishfly into your app.<br />
+
+1. Go to the [Wishfly Admin](https://admin.wishfly.dev) and create account. <br />Click on plus button to create a new project and enter your app's name.
+
+2. Add dependency to your `pubspec.yaml` file
+
+```bash
+$ flutter pub add wishfly: ^0.0.5
+```
+or 
+
 ```yaml
-wishfly_client:
-    https://github.com/Wishfly-dev/client.git
-    ref: main
+dependencies:
+  flutter:
+    sdk: flutter
+  ...
+  wishfly: ^0.0.4
 ```
 
-2. Import and configure it with your API key and project. You can find your API key in your admin dashboard on <a href="https://admin.wishfly.dev" target="_blank">wishfly.dev</a>
+Don't forget to `flutter pub get`.
+
+3. Import package in your dart file
 
 ```dart
 import 'package:wishfly_client/wishfly_client.dart';
 ```
 
-3. You can place Widget in you widget tree. It could be a screen, modal or whatever you want. 
+4. You can place Widget in you widget tree. It could be a screen, modal or whatever you want. You can see example below.
 
 ```dart
-child: Wishfly(
-    apiKey: "your-api-key-here", // Paste your API key here
-    projectId: 0, // Paste your project ID here        
-),
+import 'package:wishfly/wiredash.dart';
+
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Wiredash(
+      apiKey: "your-api-key-here", // your API key
+      projectId: 0, // your project ID
+    );
+  }
+}
 ```
 ---
 
