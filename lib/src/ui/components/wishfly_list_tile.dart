@@ -50,7 +50,7 @@ class WishflyListTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    "packages/wishfly_client/assets/images/upvote.png",
+                    "packages/wishfly/assets/images/upvote.png",
                     width: 20,
                     color: WishflyTheme.of(context)?.voteIconColor,
                   ),
