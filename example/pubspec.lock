@@ -261,15 +261,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.5"
-  shared:
-    dependency: transitive
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: aaff1f65cf027a838f669001e11939eedb439f5c
-      url: "https://github.com/Wishfly-dev/shared.git"
-    source: git
-    version: "1.0.0"
   shared_preferences:
     dependency: transitive
     description:
@@ -403,13 +394,21 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.4"
-  wishfly_client:
+  wishfly:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.7"
+  wishfly_shared:
+    dependency: transitive
+    description:
+      name: wishfly_shared
+      sha256: bbcf59105dc8b17f15d231fa19598693474b129529257e048fe357f437cbafd9
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.3"
   xdg_directories:
     dependency: transitive
     description:
