@@ -43,13 +43,13 @@ import 'package:wishfly/wishfly.dart';
 4. You can place Widget in you widget tree. It could be a screen, modal or whatever you want. You can see example below.
 
 ```dart
-import 'package:wishfly/wiredash.dart';
+import 'package:wishfly/wishfly.dart';
 
 class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wiredash(
+    return Wishfly(
       apiKey: "your-api-key-here", // your API key
       projectId: 0, // your project ID
     );
