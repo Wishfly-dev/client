@@ -5,5 +5,6 @@
     "newWishDescription": "Description",
     "emptyTitleValidationErrorMessage": "Wish title can not be empty.",
     "errorLoadingWishes": "Error loading wishes.",
-    "saveNewWish": "Save"
+    "saveNewWish": "Save",
+    "newlyCreatedWishWarning": "Newly created feature wish won't be shown in list until it's approved."
 }
