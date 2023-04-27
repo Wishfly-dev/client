@@ -1,6 +1,6 @@
 name: wishfly
 description: Wishfly allows you to know what functions should your app have. All in your app.
-version: 0.0.7
+version: 0.0.7+1
 repository: https://github.com/Wishfly-dev/client
 
 environment:
