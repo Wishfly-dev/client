@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/src/core/localization/localizations.dart';
 
 final _supportedLanguages = ['en'];
 
@@ -21,7 +21,7 @@ class WishflyLocalizationsDelegate extends LocalizationsDelegate<WishflyLocaliza
     try {
       jsonString = await rootBundle.loadString('assets/l10n/${locale.languageCode}.json');
     } catch (e) {
-      jsonString = await rootBundle.loadString('packages/wishfly_client/assets/l10n/${locale.languageCode}.json');
+      jsonString = await rootBundle.loadString('packages/wishfly/assets/l10n/${locale.languageCode}.json');
     }
 
     Map<String, dynamic> jsonMap = json.decode(jsonString);

@@ -1,7 +1,7 @@
-name: wishfly_client
-description: Wishfly client.
-version: 0.0.4
-publish_to: none
+name: wishfly
+description: Wishfly allows you to know what functions should your app have. All in your app.
+version: 0.0.7
+repository: https://github.com/Wishfly-dev/client
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
@@ -10,11 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: 0.13.3
-  provider: 6.0.5
-  shared_preferences: 2.1.0
-  shared:
-    git: https://github.com/Wishfly-dev/shared.git
+  http: ^0.13.3
+  provider: ^6.0.5
+  shared_preferences: ^2.1.0
+  wishfly_shared: ^0.0.3
 
 dev_dependencies:
   flutter_test:

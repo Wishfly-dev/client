@@ -1,3 +1,10 @@
+## 0.0.7
+* Feat: Added close button to new feature modal
+* Feat: Added explanation about newly created feature wish
+## 0.0.6
+* Fix: Formatting issues
+## 0.0.5
+* Doc: Updated README
 ## 0.0.4
 * Doc: Updated README with localization instructions
 ## 0.0.3

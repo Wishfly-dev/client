@@ -10,13 +10,15 @@ abstract class VotedWishManager {
 class PrefVotedWishManager extends VotedWishManager {
   @override
   Future<List<String>> getVotedWishes() async {
-    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
     return sharedPreferences.getStringList(_prefKey) ?? [];
   }
 
   @override
   Future<void> addVotedWish(int wishId) async {
-    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
 
     final votedWishes = await getVotedWishes();
     votedWishes.add(wishId.toString());

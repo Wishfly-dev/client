@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:wishfly_client/wishfly_client.dart';
+import 'package:wishfly/wishfly.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,10 +39,11 @@ class WishflyScreen extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Wishfly(
-        apiKey: "lXUd5IaeienlRIv2hWk0j7E7u9oMdnzckTHSKkWx0AM=", // Paste your API key here
-        projectId: 1, // Paste your project ID here
+        apiKey: "your-api-key-here", // Paste your API key here
+        projectId: 0, // Paste your project ID here
         localizationOverrides: const {
-          "noWishes": "No wishes here, but you can be the first one!", // override specific key in localization
+          "noWishes":
+              "No wishes here, but you can be the first one!", // override specific key in localization
         },
         theme: WishflyThemeData.light(
           voteIconColor: Colors.black,

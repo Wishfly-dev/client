@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wishfly_client/src/ui/theme/wishfly_theme_data.dart';
+import 'package:wishfly/src/ui/theme/wishfly_theme_data.dart';
 
 class WishflyTheme extends StatelessWidget {
   const WishflyTheme({
@@ -25,7 +25,8 @@ class WishflyTheme extends StatelessWidget {
           context.dependOnInheritedWidgetOfExactType<_InheritedWishflyTheme>();
       return inheritedTheme?.themeData;
     }
-    final _InheritedWishflyTheme? theme = context.findAncestorWidgetOfExactType<_InheritedWishflyTheme>();
+    final _InheritedWishflyTheme? theme =
+        context.findAncestorWidgetOfExactType<_InheritedWishflyTheme>();
     return theme?.themeData;
   }
 }
@@ -40,5 +41,6 @@ class _InheritedWishflyTheme extends InheritedWidget {
   final WishflyThemeData themeData;
 
   @override
-  bool updateShouldNotify(_InheritedWishflyTheme oldWidget) => themeData != oldWidget.themeData;
+  bool updateShouldNotify(_InheritedWishflyTheme oldWidget) =>
+      themeData != oldWidget.themeData;
 }
