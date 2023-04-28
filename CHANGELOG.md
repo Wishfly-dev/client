@@ -1,3 +1,6 @@
+## 0.0.8
+* Feat: Added better example
+* Fix: Removed fade overflow in title
 ## 0.0.7
 * Feat: Added close button to new feature modal
 * Feat: Added explanation about newly created feature wish
