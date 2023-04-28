@@ -7,10 +7,11 @@ class WishflyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wishfly(
-      apiKey: "qerMWwyYfJlVkv5wFOA5OKK-z8tmU9rTI2P9RBraouc=", // Paste your API key here
-      projectId: 10, // Paste your project ID here
+      apiKey: "your-api-key", // Paste your API key here
+      projectId: 0, // Paste your project ID here
       localizationOverrides: const {
-        "noWishes": "No wishes here, but you can be the first one!", // override specific key in localization
+        "noWishes":
+            "No wishes here, but you can be the first one!", // override specific key in localization
       },
       theme: WishflyThemeData.light(
         voteIconColor: Colors.black,

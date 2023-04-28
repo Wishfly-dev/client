@@ -74,7 +74,6 @@ class WishflyListTile extends StatelessWidget {
                 Text(
                   wish.title,
                   maxLines: 1,
-                  overflow: TextOverflow.fade,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: WishflyTheme.of(context)?.titleTextColor,
                         fontSize: 18,
