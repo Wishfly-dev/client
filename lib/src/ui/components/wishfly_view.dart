@@ -42,8 +42,9 @@ class WishflyView extends StatelessWidget {
                         final wish = wishes[index];
                         return WishflyListTile(
                           wish: wish,
-                          onVoteTap: () =>
-                              context.read<WishflyController>().vote(wish),
+                          onVoteTap: () => context
+                              .read<WishflyController>()
+                              .toggleVote(wish),
                         );
                       },
                     ),

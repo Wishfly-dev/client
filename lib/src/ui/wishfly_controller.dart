@@ -63,13 +63,33 @@ class WishflyController extends ChangeNotifier {
     }
   }
 
-  Future<void> vote(WishResponseDto wish) async {
-    try {
-      final votedWishes = await _votedWishManager.getVotedWishes();
-      if (votedWishes.contains("${wish.id}")) return;
+  Future<void> toggleVote(WishResponseDto wish) async {
+    final votedWishes = await _votedWishManager.getVotedWishes();
+    if (votedWishes.contains("${wish.id}")) {
+      await _removeVote(wish);
+    } else {
+      await _addVote(wish);
+    }
+  }
 
+  Future<void> _addVote(WishResponseDto wish) async {
+    try {
       await _apiClient.vote(wishId: wish.id);
       await _votedWishManager.addVotedWish(wish.id);
+      voteResult = Result.success(voidUnit);
+      await refresh();
+    } on Exception catch (e) {
+      debugPrint(e.toString());
+      voteResult = Result.error(e);
+    } finally {
+      notifyListeners();
+    }
+  }
+
+  Future<void> _removeVote(WishResponseDto wish) async {
+    try {
+      await _apiClient.removeVote(wishId: wish.id);
+      await _votedWishManager.removeVotedWish(wish.id);
       voteResult = Result.success(voidUnit);
       await refresh();
     } on Exception catch (e) {

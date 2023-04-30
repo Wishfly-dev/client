@@ -126,6 +126,20 @@ class WishflyApiClient {
     }
   }
 
+  /// DELETE /api/v1/wish/$id/vote
+  /// Delete vote for selected wish
+  Future<void> removeVote({required int wishId}) async {
+    final uri = Uri.parse('$_baseUrl/api/v1/wish/$wishId/vote');
+    final response = await _httpClient.delete(
+      uri,
+      headers: await _getRequestHeaders(),
+    );
+
+    if (response.statusCode != HttpStatus.ok) {
+      throw _parseErrorResponse(response.body, response.statusCode);
+    }
+  }
+
   Future<Map<String, String>> _getRequestHeaders() async {
     return <String, String>{
       HttpHeaders.contentTypeHeader: ContentType.json.value,

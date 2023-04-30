@@ -1,3 +1,5 @@
+## 0.1.0
+* Feat: Toggle vote (add or remove) vote on feature
 ## 0.0.8
 * Feat: Added better example
 * Fix: Removed fade overflow in title

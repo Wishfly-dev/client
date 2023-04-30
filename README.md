@@ -20,7 +20,7 @@
 2. Add dependency to your `pubspec.yaml` file
 
 ```bash
-$ flutter pub add wishfly: ^0.0.8
+$ flutter pub add wishfly: ^0.1.0
 ```
 or 
 
@@ -29,7 +29,7 @@ dependencies:
   flutter:
     sdk: flutter
   ...
-  wishfly: ^0.0.8
+  wishfly: ^0.1.0
 ```
 
 Don't forget to `flutter pub get`.
