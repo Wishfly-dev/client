@@ -7,7 +7,9 @@ class WishflyLocalizations {
 
   static WishflyLocalizations? of(BuildContext context) {
     return Localizations.of<WishflyLocalizations>(
-        context, WishflyLocalizations);
+      context,
+      WishflyLocalizations,
+    );
   }
 
   String translate(String key) {
@@ -15,6 +17,8 @@ class WishflyLocalizations {
   }
 
   void overrideKey(String key, String value) {
-    _localizedStrings[key] = value;
+    if (_localizedStrings.containsKey(key)) {
+      _localizedStrings[key] = value;
+    }
   }
 }

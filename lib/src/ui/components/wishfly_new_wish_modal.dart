@@ -73,18 +73,25 @@ class NewWishModalController {
                     },
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return context.translate('emptyTitleValidationErrorMessage');
+                        return context
+                            .translate('emptyTitleValidationErrorMessage');
                       }
                       return null;
                     },
                     decoration: InputDecoration(
                       filled: true,
-                      border:
-                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
-                      focusedBorder:
-                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
-                      enabledBorder:
-                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color:
+                                  WishflyTheme.of(context)!.titleTextColor!)),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color:
+                                  WishflyTheme.of(context)!.titleTextColor!)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color:
+                                  WishflyTheme.of(context)!.titleTextColor!)),
                     ),
                   ),
                   const SizedBox(height: spacingM),
@@ -102,21 +109,26 @@ class NewWishModalController {
                     cursorColor: WishflyTheme.of(context)?.titleTextColor,
                     minLines: 4,
                     maxLines: 7,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.copyWith(fontSize: 16, color: WishflyTheme.of(context)!.titleTextColor),
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        fontSize: 16,
+                        color: WishflyTheme.of(context)!.titleTextColor),
                     onChanged: (text) {
                       description = text;
                     },
                     decoration: InputDecoration(
                       filled: true,
-                      border:
-                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
-                      focusedBorder:
-                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
-                      enabledBorder:
-                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
+                      border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color:
+                                  WishflyTheme.of(context)!.titleTextColor!)),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color:
+                                  WishflyTheme.of(context)!.titleTextColor!)),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color:
+                                  WishflyTheme.of(context)!.titleTextColor!)),
                     ),
                   ),
                   const SizedBox(height: spacingS),
@@ -137,7 +149,8 @@ class NewWishModalController {
                                 fontSize: 18,
                               ),
                             ),
-                            onPressed: () => _onCreateWishTapped(title, description, formKey, context),
+                            onPressed: () => _onCreateWishTapped(
+                                title, description, formKey, context),
                           )
                         : MaterialButton(
                             child: Text(
@@ -147,7 +160,8 @@ class NewWishModalController {
                                 fontSize: 18,
                               ),
                             ),
-                            onPressed: () => _onCreateWishTapped(title, description, formKey, context),
+                            onPressed: () => _onCreateWishTapped(
+                                title, description, formKey, context),
                           ),
                   ),
                   const SizedBox(height: spacingL),
@@ -175,7 +189,7 @@ class NewWishModalController {
 }
 
 class _CloseButton extends StatelessWidget {
-  const _CloseButton({super.key});
+  const _CloseButton();
 
   @override
   Widget build(BuildContext context) {

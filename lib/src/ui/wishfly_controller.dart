@@ -5,6 +5,7 @@ import 'package:wishfly/src/core/ext/list_wish_response.dart';
 import 'package:wishfly/src/core/result.dart';
 import 'package:wishfly/src/io/api/api.dart';
 import 'package:wishfly/src/io/managers/voted_wish_manager.dart';
+import 'package:wishfly/src/io/models/project_plan_model.dart';
 import 'package:wishfly_shared/wishfly_shared.dart' hide Result;
 
 class WishflyController extends ChangeNotifier {
@@ -14,24 +15,37 @@ class WishflyController extends ChangeNotifier {
   /// Project ID to identify key with project
   final int _projectId;
 
-  Result<Exception, List<WishResponseDto>> fetchWishResult = Result.loading();
-  Result<Exception, Unit> newWishResult = Result.loading();
-  Result<Exception, Unit> voteResult = Result.loading();
+  /// Represents the plan user is current on [ProjectPlan]
+  ProjectPlan userCurrentPlan = ProjectPlan.unknown;
 
-  List<WishResponseDto> get wishes => fetchWishResult.getOrElse ?? [];
+  /// Result of fetching wishes
+  Result<Exception, List<WishResponseDto>> fetchWishResult = Result.loading();
+
+  /// Result of creating a new wish
+  Result<Exception, Unit> newWishResult = Result.loading();
+
+  /// Result of voting on a wish
+  Result<Exception, Unit> voteResult = Result.loading();
 
   WishflyController({
     WishflyApiClient? apiClient,
     VotedWishManager? votedWishManager,
     required String apiKey,
     required int projectId,
-  })  : _apiClient = apiClient ?? WishflyApiClient(apiKey: apiKey),
+  })  : _apiClient = apiClient ?? WishflyApiClient.localhost(apiKey: apiKey),
         _votedWishManager = votedWishManager ?? PrefVotedWishManager(),
-        _projectId = projectId;
+        _projectId = projectId {
+    fetchProjectInfo();
+  }
 
-  Future<void> refresh() async => fetchProject();
+  Future<void> refresh() async => _fetchProject();
 
-  Future<void> fetchProject() async {
+  Future<void> fetchProjectInfo() async => Future.wait([
+        _fetchProject(),
+        _fetchProjectDetail(),
+      ]);
+
+  Future<void> _fetchProject() async {
     try {
       final project = await _apiClient.getProject(id: _projectId);
       final wishes = project.wishes.filterOnlyApproved;
@@ -39,6 +53,18 @@ class WishflyController extends ChangeNotifier {
     } on Exception catch (e) {
       debugPrint(e.toString());
       fetchWishResult = Result.error(e);
+    } finally {
+      notifyListeners();
+    }
+  }
+
+  Future<void> _fetchProjectDetail() async {
+    try {
+      final projectDetail = await _apiClient.getProjectDetail(id: _projectId);
+      userCurrentPlan = projectDetail.currentPlan.toProjectPlan;
+    } on Exception catch (e) {
+      debugPrint(e.toString());
+      userCurrentPlan = ProjectPlan.free;
     } finally {
       notifyListeners();
     }
@@ -63,13 +89,33 @@ class WishflyController extends ChangeNotifier {
     }
   }
 
-  Future<void> vote(WishResponseDto wish) async {
-    try {
-      final votedWishes = await _votedWishManager.getVotedWishes();
-      if (votedWishes.contains("${wish.id}")) return;
+  Future<void> toggleVote(WishResponseDto wish) async {
+    final votedWishes = await _votedWishManager.getVotedWishes();
+    if (votedWishes.contains("${wish.id}")) {
+      await _removeVote(wish);
+    } else {
+      await _addVote(wish);
+    }
+  }
 
+  Future<void> _addVote(WishResponseDto wish) async {
+    try {
       await _apiClient.vote(wishId: wish.id);
       await _votedWishManager.addVotedWish(wish.id);
+      voteResult = Result.success(voidUnit);
+      await refresh();
+    } on Exception catch (e) {
+      debugPrint(e.toString());
+      voteResult = Result.error(e);
+    } finally {
+      notifyListeners();
+    }
+  }
+
+  Future<void> _removeVote(WishResponseDto wish) async {
+    try {
+      await _apiClient.removeVote(wishId: wish.id);
+      await _votedWishManager.removeVotedWish(wish.id);
       voteResult = Result.success(voidUnit);
       await refresh();
     } on Exception catch (e) {

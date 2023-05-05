@@ -1,3 +1,4 @@
+import 'package:example/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:wishfly/wishfly.dart';
@@ -23,33 +24,7 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         WishflyLocalizationsDelegate(),
       ],
-      home: const WishflyScreen(),
-    );
-  }
-}
-
-class WishflyScreen extends StatelessWidget {
-  const WishflyScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Wishfly"),
-        backgroundColor: Colors.black,
-      ),
-      body: Wishfly(
-        apiKey: "your-api-key-here", // Paste your API key here
-        projectId: 0, // Paste your project ID here
-        localizationOverrides: const {
-          "noWishes":
-              "No wishes here, but you can be the first one!", // override specific key in localization
-        },
-        theme: WishflyThemeData.light(
-          voteIconColor: Colors.black,
-          addWishButtonColor: Colors.black,
-        ),
-      ),
+      home: const DashboardScreen(),
     );
   }
 }

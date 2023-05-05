@@ -8,20 +8,24 @@ import 'package:wishfly/src/core/localization/localizations.dart';
 
 final _supportedLanguages = ['en'];
 
-class WishflyLocalizationsDelegate extends LocalizationsDelegate<WishflyLocalizations> {
+class WishflyLocalizationsDelegate
+    extends LocalizationsDelegate<WishflyLocalizations> {
   const WishflyLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => _supportedLanguages.contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      _supportedLanguages.contains(locale.languageCode);
 
   @override
   Future<WishflyLocalizations> load(Locale locale) async {
     late String jsonString;
 
     try {
-      jsonString = await rootBundle.loadString('assets/l10n/${locale.languageCode}.json');
+      jsonString = await rootBundle
+          .loadString('assets/l10n/${locale.languageCode}.json');
     } catch (e) {
-      jsonString = await rootBundle.loadString('packages/wishfly/assets/l10n/${locale.languageCode}.json');
+      jsonString = await rootBundle.loadString(
+          'packages/wishfly/assets/l10n/${locale.languageCode}.json');
     }
 
     Map<String, dynamic> jsonMap = json.decode(jsonString);
@@ -32,5 +36,7 @@ class WishflyLocalizationsDelegate extends LocalizationsDelegate<WishflyLocaliza
   }
 
   @override
-  bool shouldReload(covariant LocalizationsDelegate<WishflyLocalizations> old) => false;
+  bool shouldReload(
+          covariant LocalizationsDelegate<WishflyLocalizations> old) =>
+      false;
 }

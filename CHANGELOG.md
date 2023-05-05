@@ -1,3 +1,10 @@
+## 0.1.1
+* Feat: Added watermark for free plan
+## 0.1.0
+* Feat: Toggle vote (add or remove) vote on feature
+## 0.0.8
+* Feat: Added better example
+* Fix: Removed fade overflow in title
 ## 0.0.7
 * Feat: Added close button to new feature modal
 * Feat: Added explanation about newly created feature wish

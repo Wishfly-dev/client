@@ -5,6 +5,7 @@ abstract class VotedWishManager {
 
   Future<List<String>> getVotedWishes();
   Future<void> addVotedWish(int wishId);
+  Future<void> removeVotedWish(int wishId);
 }
 
 class PrefVotedWishManager extends VotedWishManager {
@@ -22,6 +23,16 @@ class PrefVotedWishManager extends VotedWishManager {
 
     final votedWishes = await getVotedWishes();
     votedWishes.add(wishId.toString());
+    sharedPreferences.setStringList(_prefKey, votedWishes);
+  }
+
+  @override
+  Future<void> removeVotedWish(int wishId) async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+
+    final votedWishes = await getVotedWishes();
+    votedWishes.remove(wishId.toString());
     sharedPreferences.setStringList(_prefKey, votedWishes);
   }
 }
