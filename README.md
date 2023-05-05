@@ -2,6 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/wishfly.svg)](https://pub.dev/packages/wishfly)
 [![Website](https://img.shields.io/badge/website-wishfly.dev-blue.svg)](https://wishfly.dev/)
+[![Twitter](https://img.shields.io/badge/Twitter-@Wishflydev-00c573.svg)](https://twitter.com/Wishflydev)
 
 ## Put your users to driver's seat. Wishfly allows you to know what functions should your app have. 
 
