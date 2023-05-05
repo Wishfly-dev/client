@@ -20,7 +20,7 @@
 2. Add dependency to your `pubspec.yaml` file
 
 ```bash
-$ flutter pub add wishfly: ^0.1.0
+$ flutter pub add wishfly: ^0.1.1
 ```
 or 
 
@@ -29,7 +29,7 @@ dependencies:
   flutter:
     sdk: flutter
   ...
-  wishfly: ^0.1.0
+  wishfly: ^0.1.1
 ```
 
 Don't forget to `flutter pub get`.
@@ -65,7 +65,7 @@ Default language is English.
 
 For supporting other languages, you can add corresponding keys to your own localization file and pass it to Wishfly widget. You can see localization keys [here](https://github.com/Wishfly-dev/client/blob/dev/assets/l10n/en.json).
 
-To get localization, add ```WishflyLocalizationDelegate``` to your MaterialApp widget. 
+To get localization done, add ```WishflyLocalizationDelegate``` to your MaterialApp localizationsDelegates. 
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -106,7 +106,6 @@ You can customize colors in UI. Here you can see what you can customize:
 
 ```dart
 class WishflyThemeData {
-  final Brightness brightness;
   final Color? voteIconColor;
   final Color? addWishButtonColor;
   final Color? titleTextColor;

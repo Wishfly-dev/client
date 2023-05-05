@@ -38,7 +38,7 @@ class _WishflyState extends State<Wishfly> {
       create: (_) => WishflyController(
         apiKey: widget.apiKey,
         projectId: widget.projectId,
-      )..fetchProject(),
+      ),
       child: WishflyTheme(
         data: widget.theme ?? WishflyThemeData.light(),
         child: const WishflyView(),

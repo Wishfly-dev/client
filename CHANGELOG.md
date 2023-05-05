@@ -1,3 +1,5 @@
+## 0.1.1
+* Feat: Added watermark for free plan
 ## 0.1.0
 * Feat: Toggle vote (add or remove) vote on feature
 ## 0.0.8
