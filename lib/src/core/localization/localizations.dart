@@ -6,7 +6,10 @@ class WishflyLocalizations {
   WishflyLocalizations(this._localizedStrings);
 
   static WishflyLocalizations? of(BuildContext context) {
-    return Localizations.of<WishflyLocalizations>(context, WishflyLocalizations);
+    return Localizations.of<WishflyLocalizations>(
+      context,
+      WishflyLocalizations,
+    );
   }
 
   String translate(String key) {

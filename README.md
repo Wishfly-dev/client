@@ -65,7 +65,7 @@ Default language is English.
 
 For supporting other languages, you can add corresponding keys to your own localization file and pass it to Wishfly widget. You can see localization keys [here](https://github.com/Wishfly-dev/client/blob/dev/assets/l10n/en.json).
 
-To get localization done, add ```WishflyLocalizationDelegate``` to your MaterialApp localizationsDelegates. 
+To get localization done, add ```WishflyLocalizationDelegate``` to your MaterialApp widget. 
 
 ```dart
 class MyApp extends StatelessWidget {
