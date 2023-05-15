@@ -120,6 +120,8 @@ class WishflyApiClient {
     return ProjectDetailResponseDto.fromJson(body);
   }
 
+  /// POST /api/v1/wish
+  /// Create wish in given project [WishRequestDto.projectId]
   Future<void> createWish({required WishRequestDto request}) async {
     final uri = Uri.parse('$_baseUrl/api/v1/wish');
     final response = await _httpClient.post(

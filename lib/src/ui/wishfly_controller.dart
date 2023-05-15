@@ -32,7 +32,7 @@ class WishflyController extends ChangeNotifier {
     VotedWishManager? votedWishManager,
     required String apiKey,
     required int projectId,
-  })  : _apiClient = apiClient ?? WishflyApiClient(apiKey: apiKey),
+  })  : _apiClient = apiClient ?? WishflyApiClient.localhost(apiKey: apiKey),
         _votedWishManager = votedWishManager ?? PrefVotedWishManager(),
         _projectId = projectId {
     fetchProjectInfo();
@@ -52,6 +52,7 @@ class WishflyController extends ChangeNotifier {
       fetchWishResult = Result.success(wishes);
     } on Exception catch (e) {
       debugPrint(e.toString());
+
       fetchWishResult = Result.error(e);
     } finally {
       notifyListeners();
