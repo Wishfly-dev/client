@@ -1,3 +1,7 @@
+## 0.2.0
+* Fix: Fix dark theme
+* Feat(example): Added example for switching dark and light theme
+* Docs: Added link to API client
 ## 0.1.1
 * Feat: Added watermark for free plan
 ## 0.1.0
