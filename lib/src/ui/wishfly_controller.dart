@@ -52,6 +52,7 @@ class WishflyController extends ChangeNotifier {
       fetchWishResult = Result.success(wishes);
     } on Exception catch (e) {
       debugPrint(e.toString());
+
       fetchWishResult = Result.error(e);
     } finally {
       notifyListeners();

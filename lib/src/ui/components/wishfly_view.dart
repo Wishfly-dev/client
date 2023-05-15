@@ -67,7 +67,7 @@ class _WishesListView extends StatelessWidget {
 }
 
 class _MadeByWishflyText extends StatelessWidget {
-  const _MadeByWishflyText({super.key});
+  const _MadeByWishflyText();
 
   @override
   Widget build(BuildContext context) {

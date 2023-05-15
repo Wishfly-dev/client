@@ -3,7 +3,8 @@ import 'package:example/wishfly_screen.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({super.key});
+  final VoidCallback toggleTheme;
+  const DashboardScreen({required this.toggleTheme, super.key});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -20,22 +21,39 @@ class _DashboardScreenState extends State<DashboardScreen> {
       appBar: AppBar(
         title: const Text("Counter"),
         backgroundColor: Colors.black,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.brightness_4,
+              color: Colors.white,
+            ),
+            onPressed: widget.toggleTheme,
+          ),
+        ],
       ),
       body: screens[index],
       bottomNavigationBar: BottomNavigationBar(
-        fixedColor: Colors.black,
+        backgroundColor: Theme.of(context).primaryColor,
+        unselectedLabelStyle:
+            const TextStyle(color: Colors.white, fontSize: 14),
         currentIndex: index,
         onTap: (i) {
           setState(() => index = i);
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
             label: "Counter",
-            icon: Icon(Icons.plus_one, color: Colors.black),
+            icon: Icon(
+              Icons.plus_one,
+              color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
           ),
           BottomNavigationBarItem(
             label: "Features",
-            icon: Icon(Icons.feedback, color: Colors.black),
+            icon: Icon(
+              Icons.feedback,
+              color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+            ),
           ),
         ],
       ),

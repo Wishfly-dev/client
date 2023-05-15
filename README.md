@@ -10,8 +10,9 @@
 ![](./images/hero.png)
 
 ## Features
-- User can create wish with title and description. 
-- In [Admin](https://admin.wishfly.dev) you can change status of each wish (all new wishes must be approved before showing in list for users).
+- User can create feature request with title and description. 
+- In [Admin](https://admin.wishfly.dev) you can change status of each feature request.
+- All new feature requests must be approved by you before popping up in user list.
 
 ## Getting started
 > 🤘 It takes less than 180 seconds to integrate Wishfly into your app.<br />
@@ -21,7 +22,7 @@
 2. Add dependency to your `pubspec.yaml` file
 
 ```bash
-$ flutter pub add wishfly: ^0.1.1
+$ flutter pub add wishfly: ^<latest version>
 ```
 or 
 
@@ -30,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   ...
-  wishfly: ^0.1.1
+  wishfly: ^<latest version>
 ```
 
 Don't forget to `flutter pub get`.
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
 ---
 
 ## Additional information
+Even though you can customize almost every color, Wishfly doesn't have to perfectly fit your needs. No problem. There is [API client](https://github.com/Wishfly-dev/api_client) so you can perfectly match it with your design system. 
 
 ### Localization
 Default language is English.

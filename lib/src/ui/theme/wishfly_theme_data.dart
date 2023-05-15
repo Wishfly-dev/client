@@ -63,19 +63,18 @@ class WishflyThemeData {
     Color? itemTileColor,
     Color? progressBarBackgroundColor,
   }) {
-    return WishflyThemeData.defaultTheme()
-      ..copyWith(
-        brightness: Brightness.dark,
-        voteIconColor: voteIconColor,
-        addWishButtonColor: addWishButtonColor,
-        titleTextColor: titleTextColor,
-        voteCountTextColor: voteCountTextColor,
-        descriptionTextColor: descriptionTextColor,
-        primaryBackgroundColor: primaryBackgroundColor,
-        tileBackgroundColor: tileBackgroundColor,
-        itemTileColor: itemTileColor,
-        progressBarBackgroundColor: progressBarBackgroundColor,
-      );
+    return WishflyThemeData.defaultTheme().copyWith(
+      brightness: Brightness.dark,
+      voteIconColor: voteIconColor,
+      addWishButtonColor: addWishButtonColor,
+      titleTextColor: titleTextColor,
+      voteCountTextColor: voteCountTextColor,
+      descriptionTextColor: descriptionTextColor,
+      primaryBackgroundColor: primaryBackgroundColor,
+      tileBackgroundColor: tileBackgroundColor,
+      itemTileColor: itemTileColor,
+      progressBarBackgroundColor: progressBarBackgroundColor,
+    );
   }
 
   factory WishflyThemeData.defaultTheme() {
