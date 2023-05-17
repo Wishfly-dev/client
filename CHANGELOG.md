@@ -1,3 +1,5 @@
+## 0.2.1
+* Refactor: Changed API client implementation to `wishfly_api_client` 
 ## 0.2.0
 * Fix: Fix dark theme
 * Feat(example): Added example for switching dark and light theme
