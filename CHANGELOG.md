@@ -1,3 +1,8 @@
+## 0.2.2
+* Fix: Modal button web issue
+* BREAKING: Changed localization delegate to `WishflyLocalizations.delegate` (commit)[https://github.com/Wishfly-dev/client/commit/6458f4093fa992593f205a5938818cbfd91eb28e]
+* Chore: upgraded version of API client
+* Fix: Localization example
 ## 0.2.1
 * Refactor: Changed API client implementation to `wishfly_api_client` 
 ## 0.2.0

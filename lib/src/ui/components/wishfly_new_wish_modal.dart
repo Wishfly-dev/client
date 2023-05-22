@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wishfly/src/core/ext/context_ext.dart';
@@ -139,30 +136,19 @@ class NewWishModalController {
                           color: Colors.grey,
                         ),
                   ),
+                  const SizedBox(height: spacingM),
                   Center(
-                    child: Platform.isIOS
-                        ? CupertinoButton(
-                            child: Text(
-                              context.translate('saveNewWish'),
-                              style: TextStyle(
-                                color: WishflyTheme.of(context)?.titleTextColor,
-                                fontSize: 18,
-                              ),
-                            ),
-                            onPressed: () => _onCreateWishTapped(
-                                title, description, formKey, context),
-                          )
-                        : MaterialButton(
-                            child: Text(
-                              context.translate('saveNewWish'),
-                              style: TextStyle(
-                                color: WishflyTheme.of(context)?.titleTextColor,
-                                fontSize: 18,
-                              ),
-                            ),
-                            onPressed: () => _onCreateWishTapped(
-                                title, description, formKey, context),
-                          ),
+                    child: MaterialButton(
+                      child: Text(
+                        context.translate('saveNewWish'),
+                        style: TextStyle(
+                          color: WishflyTheme.of(context)?.titleTextColor,
+                          fontSize: 18,
+                        ),
+                      ),
+                      onPressed: () => _onCreateWishTapped(
+                          title, description, formKey, context),
+                    ),
                   ),
                   const SizedBox(height: spacingL),
                 ],
