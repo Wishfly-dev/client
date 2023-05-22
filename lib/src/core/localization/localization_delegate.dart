@@ -8,6 +8,7 @@ import 'package:wishfly/src/core/localization/localizations.dart';
 
 final _supportedLanguages = ['en'];
 
+@Deprecated('Use WishflyLocalizations.delegate instead')
 class WishflyLocalizationsDelegate
     extends LocalizationsDelegate<WishflyLocalizations> {
   const WishflyLocalizationsDelegate();

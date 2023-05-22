@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wishfly/src/core/ext/context_ext.dart';
 import 'package:wishfly/src/ui/components/wishfly_view.dart';
 import 'package:wishfly/src/ui/theme/wishfly_theme.dart';
 import 'package:wishfly/src/ui/theme/wishfly_theme_data.dart';
@@ -25,6 +24,8 @@ class Wishfly extends StatefulWidget {
   final WishflyThemeData? theme;
 
   /// Override localization strings
+  @Deprecated(
+      "This is not supported anymore. For overrides, use the WishflyLocalizations class.")
   final Map<String, String>? localizationOverrides;
 
   @override
@@ -44,17 +45,5 @@ class _WishflyState extends State<Wishfly> {
         child: const WishflyView(),
       ),
     );
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-
-    /// Override localization strings
-    if (widget.localizationOverrides != null) {
-      widget.localizationOverrides!.forEach(
-        (key, value) => context.overrideKey(key, value),
-      );
-    }
   }
 }
