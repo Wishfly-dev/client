@@ -7,8 +7,8 @@ class WishflyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wishfly(
-      apiKey: "URqGN5T8IGOT2hab7hAbv9aJzLXcglmWePYBDB-k9vE=",
-      projectId: 16,
+      apiKey: "your-api-key",
+      projectId: 0,
       theme: Theme.of(context).brightness == Brightness.dark
           ? WishflyThemeData.dark(
               voteIconColor: Colors.red,

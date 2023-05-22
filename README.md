@@ -68,7 +68,7 @@ Default language is English.
 
 For supporting other languages, you can add corresponding keys to your own localization file and pass it to Wishfly widget. You can see localization keys [here](https://github.com/Wishfly-dev/client/blob/dev/assets/l10n/en.json).
 
-To get localization done, add ```WishflyLocalizationDelegate``` to your MaterialApp widget. 
+To get localization done, add ```WishflyLocalizations.delegate``` to your MaterialApp widget. 
 
 ```dart
 class MyApp extends StatelessWidget {
@@ -83,25 +83,12 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-        WishflyLocalizationsDelegate(), // Add this line
+        WishflyLocalizations.delegate, // Add this line
       ],
       home: ...,
     );
   }
 }
-```
-
-If you do not add keys to your localization file, you can pass a map with keys to Wishfly widget in order to override default values.
-
-```dart
-child: Wishfly(
-    apiKey: ...
-    projectId: ...,
-    localizationOverrides: const {
-        "noWishes": "No wishes here, but you can be the first one!",
-        //... and more
-    },
-),
 ```
 
 ### Theme 
@@ -139,6 +126,8 @@ child: Wishfly(
     ),      
 ),
 ``` 
+
+You can see complete example [here](https://github.com/Wishfly-dev/client/blob/dev/example/lib/wishfly_screen.dart)
 
 --- 
 ### Note: ⚠️ Wishfly is currently in beta and under development. The SDK API might change in future.
