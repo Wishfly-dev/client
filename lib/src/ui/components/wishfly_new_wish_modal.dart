@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wishfly/src/core/ext/context_ext.dart';
@@ -73,25 +70,18 @@ class NewWishModalController {
                     },
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return context
-                            .translate('emptyTitleValidationErrorMessage');
+                        return context.translate('emptyTitleValidationErrorMessage');
                       }
                       return null;
                     },
                     decoration: InputDecoration(
                       filled: true,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  WishflyTheme.of(context)!.titleTextColor!)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  WishflyTheme.of(context)!.titleTextColor!)),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  WishflyTheme.of(context)!.titleTextColor!)),
+                      border:
+                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
+                      focusedBorder:
+                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
+                      enabledBorder:
+                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
                     ),
                   ),
                   const SizedBox(height: spacingM),
@@ -109,26 +99,21 @@ class NewWishModalController {
                     cursorColor: WishflyTheme.of(context)?.titleTextColor,
                     minLines: 4,
                     maxLines: 7,
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        fontSize: 16,
-                        color: WishflyTheme.of(context)!.titleTextColor),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(fontSize: 16, color: WishflyTheme.of(context)!.titleTextColor),
                     onChanged: (text) {
                       description = text;
                     },
                     decoration: InputDecoration(
                       filled: true,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  WishflyTheme.of(context)!.titleTextColor!)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  WishflyTheme.of(context)!.titleTextColor!)),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color:
-                                  WishflyTheme.of(context)!.titleTextColor!)),
+                      border:
+                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
+                      focusedBorder:
+                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
+                      enabledBorder:
+                          OutlineInputBorder(borderSide: BorderSide(color: WishflyTheme.of(context)!.titleTextColor!)),
                     ),
                   ),
                   const SizedBox(height: spacingS),
@@ -139,30 +124,18 @@ class NewWishModalController {
                           color: Colors.grey,
                         ),
                   ),
+                  const SizedBox(height: spacingM),
                   Center(
-                    child: Platform.isIOS
-                        ? CupertinoButton(
-                            child: Text(
-                              context.translate('saveNewWish'),
-                              style: TextStyle(
-                                color: WishflyTheme.of(context)?.titleTextColor,
-                                fontSize: 18,
-                              ),
-                            ),
-                            onPressed: () => _onCreateWishTapped(
-                                title, description, formKey, context),
-                          )
-                        : MaterialButton(
-                            child: Text(
-                              context.translate('saveNewWish'),
-                              style: TextStyle(
-                                color: WishflyTheme.of(context)?.titleTextColor,
-                                fontSize: 18,
-                              ),
-                            ),
-                            onPressed: () => _onCreateWishTapped(
-                                title, description, formKey, context),
-                          ),
+                    child: MaterialButton(
+                      child: Text(
+                        context.translate('saveNewWish'),
+                        style: TextStyle(
+                          color: WishflyTheme.of(context)?.titleTextColor,
+                          fontSize: 18,
+                        ),
+                      ),
+                      onPressed: () => _onCreateWishTapped(title, description, formKey, context),
+                    ),
                   ),
                   const SizedBox(height: spacingL),
                 ],
