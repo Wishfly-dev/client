@@ -52,7 +52,8 @@ class _WishflyLocalizationsDelegate
       jsonString = await rootBundle
           .loadString('assets/l10n/${locale.languageCode}.json');
     } catch (e) {
-      debugPrint("Error loading localization file: $e");
+      jsonString = await rootBundle.loadString(
+          'packages/wishfly/assets/l10n/${locale.languageCode}.json');
     }
 
     Map<String, dynamic> jsonMap = json.decode(jsonString);

@@ -1,3 +1,7 @@
+## 0.3.0
+* Feat: Web version modal of new feature suggestion 
+* Fix: Overflow issue in mobile version of new feature suggestion modal 
+* Fix: Localization fix
 ## 0.2.2
 * Fix: Modal button web issue
 * BREAKING: Changed localization delegate to `WishflyLocalizations.delegate` (commit)[https://github.com/Wishfly-dev/client/commit/6458f4093fa992593f205a5938818cbfd91eb28e]
