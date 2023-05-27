@@ -118,7 +118,8 @@ class NewWishModalController {
       },
       transitionBuilder: (context, animation1, animation2, child) {
         return SlideTransition(
-          position: Tween(begin: const Offset(1, 0), end: const Offset(0, 0)).animate(animation1),
+          position: Tween(begin: const Offset(1, 0), end: const Offset(0, 0))
+              .animate(animation1),
           child: child,
         );
       },
@@ -189,15 +190,22 @@ class _FormBodyState extends State<_FormBody> {
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return context.translate('emptyTitleValidationErrorMessage');
+                    return context
+                        .translate('emptyTitleValidationErrorMessage');
                   }
                   return null;
                 },
                 decoration: InputDecoration(
                   filled: true,
-                  border: OutlineInputBorder(borderSide: BorderSide(color: widget._theme.titleTextColor!)),
-                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: widget._theme.titleTextColor!)),
-                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: widget._theme.titleTextColor!)),
+                  border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: widget._theme.titleTextColor!)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: widget._theme.titleTextColor!)),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: widget._theme.titleTextColor!)),
                 ),
               ),
               const SizedBox(height: spacingL),
@@ -224,9 +232,15 @@ class _FormBodyState extends State<_FormBody> {
                 },
                 decoration: InputDecoration(
                   filled: true,
-                  border: OutlineInputBorder(borderSide: BorderSide(color: widget._theme.titleTextColor!)),
-                  focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: widget._theme.titleTextColor!)),
-                  enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: widget._theme.titleTextColor!)),
+                  border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: widget._theme.titleTextColor!)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: widget._theme.titleTextColor!)),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: widget._theme.titleTextColor!)),
                 ),
               ),
               const SizedBox(height: spacingS),

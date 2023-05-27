@@ -36,7 +36,6 @@ class WishflyThemeData {
     Color? primaryBackgroundColor,
     Color? tileBackgroundColor,
     Color? itemTileColor,
-    Color? primarySideBackgroundColor,
     Color? progressBarBackgroundColor,
   }) {
     return WishflyThemeData.defaultTheme().copyWith(
@@ -48,7 +47,6 @@ class WishflyThemeData {
       descriptionTextColor: descriptionTextColor,
       primaryBackgroundColor: primaryBackgroundColor,
       tileBackgroundColor: tileBackgroundColor,
-      primarySideBackgroundColor: primarySideBackgroundColor,
       itemTileColor: itemTileColor,
       progressBarBackgroundColor: progressBarBackgroundColor,
     );
@@ -101,7 +99,6 @@ class WishflyThemeData {
     Color? voteCountTextColor,
     Color? descriptionTextColor,
     Color? primaryBackgroundColor,
-    Color? primarySideBackgroundColor,
     Color? tileBackgroundColor,
     Color? itemTileColor,
     Color? progressBarBackgroundColor,
@@ -114,9 +111,11 @@ class WishflyThemeData {
       tileBackgroundColor: tileBackgroundColor ?? this.tileBackgroundColor,
       voteCountTextColor: voteCountTextColor ?? this.voteCountTextColor,
       descriptionTextColor: descriptionTextColor ?? this.descriptionTextColor,
-      primaryBackgroundColor: primaryBackgroundColor ?? this.primaryBackgroundColor,
+      primaryBackgroundColor:
+          primaryBackgroundColor ?? this.primaryBackgroundColor,
       itemTileColor: itemTileColor ?? this.itemTileColor,
-      progressBarBackgroundColor: progressBarBackgroundColor ?? this.progressBarBackgroundColor,
+      progressBarBackgroundColor:
+          progressBarBackgroundColor ?? this.progressBarBackgroundColor,
     );
   }
 }
