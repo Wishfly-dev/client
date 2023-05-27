@@ -13,7 +13,7 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
   int index = 0;
 
-  final screens = const [CounterScreen(), WishflyScreen()];
+  final screens = [const CounterScreen(), const WishflyScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +33,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       ),
       body: screens[index],
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
         backgroundColor: Theme.of(context).primaryColor,
         unselectedLabelStyle:
             const TextStyle(color: Colors.white, fontSize: 14),

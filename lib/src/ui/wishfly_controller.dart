@@ -3,9 +3,9 @@ import 'dart:core';
 import 'package:flutter/widgets.dart';
 import 'package:wishfly/src/core/ext/list_wish_response.dart';
 import 'package:wishfly/src/core/result.dart';
-import 'package:wishfly/src/io/api/api.dart';
 import 'package:wishfly/src/io/managers/voted_wish_manager.dart';
 import 'package:wishfly/src/io/models/project_plan_model.dart';
+import 'package:wishfly_api_client/wishfly_api_client.dart';
 import 'package:wishfly_shared/wishfly_shared.dart' hide Result;
 
 class WishflyController extends ChangeNotifier {
@@ -32,7 +32,7 @@ class WishflyController extends ChangeNotifier {
     VotedWishManager? votedWishManager,
     required String apiKey,
     required int projectId,
-  })  : _apiClient = apiClient ?? WishflyApiClient.localhost(apiKey: apiKey),
+  })  : _apiClient = apiClient ?? WishflyApiClient(apiKey: apiKey),
         _votedWishManager = votedWishManager ?? PrefVotedWishManager(),
         _projectId = projectId {
     fetchProjectInfo();
@@ -61,7 +61,7 @@ class WishflyController extends ChangeNotifier {
 
   Future<void> _fetchProjectDetail() async {
     try {
-      final projectDetail = await _apiClient.getProjectDetail(id: _projectId);
+      final projectDetail = await _apiClient.getProjectPlan(id: _projectId);
       userCurrentPlan = projectDetail.currentPlan.toProjectPlan;
     } on Exception catch (e) {
       debugPrint(e.toString());

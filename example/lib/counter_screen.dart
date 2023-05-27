@@ -34,8 +34,11 @@ class _CounterScreenState extends State<CounterScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        backgroundColor: Colors.black,
-        child: const Icon(Icons.plus_one),
+        backgroundColor: Colors.grey,
+        child: Icon(
+          Icons.plus_one,
+          color: Theme.of(context).hintColor,
+        ),
       ),
     );
   }
