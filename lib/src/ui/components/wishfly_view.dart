@@ -19,8 +19,7 @@ class WishflyView extends StatelessWidget {
       backgroundColor: WishflyTheme.of(context)?.primaryBackgroundColor,
       body: RefreshIndicator(
         color: WishflyTheme.of(context)?.addWishButtonColor,
-        onRefresh: () async =>
-            await context.read<WishflyController>().refresh(),
+        onRefresh: () async => await context.read<WishflyController>().refresh(),
         child: context.watch<WishflyController>().fetchWishResult.when(
               (wishes) => wishes.isEmpty
                   ? const _NoWishesText()
@@ -74,14 +73,12 @@ class _MadeByWishflyText extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Visibility(
-        visible: context.watch<WishflyController>().userCurrentPlan ==
-            ProjectPlan.free,
+        visible: context.watch<WishflyController>().userCurrentPlan == ProjectPlan.free,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 10),
           child: Text(
             "${context.translate("poweredBy")} Wishfly.dev",
-            style: TextStyle(
-                color: WishflyTheme.of(context)!.descriptionTextColor),
+            style: TextStyle(color: WishflyTheme.of(context)!.descriptionTextColor),
           ),
         ),
       ),
