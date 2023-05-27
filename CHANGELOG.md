@@ -1,3 +1,4 @@
+
 ## 0.3.0
 * Feat: Web version modal of new feature suggestion 
 * Fix: Overflow issue in mobile version of new feature suggestion modal 

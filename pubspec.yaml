@@ -13,7 +13,6 @@ dependencies:
   http: ^0.13.3
   provider: ^6.0.5
   shared_preferences: ^2.1.0
-
   wishfly_shared: ^0.1.0
   wishfly_api_client: ^0.3.1
 
